@@ -47,10 +47,7 @@ namespace csharp_oop_shop
             get { return iva; }
             set { iva = value; }
         }
-        public float taxedPrice
-        {
-            get { return Price + (Price /100 * iva); }
-        }
+        
 
         //COSTRUTTORE
         public Prodotto(string name, float price, float iva)
@@ -68,6 +65,11 @@ namespace csharp_oop_shop
         {
             string productFullName = name + code;
             return productFullName;
+        }
+        public float GetTaxedPrice()
+        {
+            float taxedPrice = price + (price/ 100 * iva);
+            return taxedPrice;
         }
 
         
